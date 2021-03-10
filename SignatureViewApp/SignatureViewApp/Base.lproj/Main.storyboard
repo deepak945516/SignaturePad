@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GVQ-Qk-l6t">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Draw-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="DrawSignatureViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="DrawSignatureViewController" customModule="SignatureViewApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qaY-jV-9yp" customClass="DrawView" customModule="SignatureViewApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="348" width="374" height="200"/>
+                                <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="8E5-bp-TqN"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8aB-N1-d6v">
+                                <rect key="frame" x="20" y="568" width="177" height="45"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="ftq-vM-RDY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <state key="normal" title="Show Signature">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Nem-Oz-jHi" kind="show" identifier="ShowSignatureViewController" id="gFP-fj-Xib"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqD-Iq-aCJ">
+                                <rect key="frame" x="217" y="568" width="177" height="45"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <state key="normal" title="Clear">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="clearButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="ekI-1q-NKy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8aB-N1-d6v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="0GE-fv-o09"/>
+                            <constraint firstItem="qaY-jV-9yp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="0eh-RG-PXm"/>
+                            <constraint firstItem="qaY-jV-9yp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4Ne-Dz-dJe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qaY-jV-9yp" secondAttribute="trailing" constant="20" id="Amt-hx-LvN"/>
+                            <constraint firstItem="aqD-Iq-aCJ" firstAttribute="width" secondItem="8aB-N1-d6v" secondAttribute="width" id="OXb-2W-wRh"/>
+                            <constraint firstItem="aqD-Iq-aCJ" firstAttribute="centerY" secondItem="8aB-N1-d6v" secondAttribute="centerY" id="Qa6-A4-v2L"/>
+                            <constraint firstItem="aqD-Iq-aCJ" firstAttribute="height" secondItem="8aB-N1-d6v" secondAttribute="height" id="UaH-gM-B3X"/>
+                            <constraint firstItem="8aB-N1-d6v" firstAttribute="top" secondItem="qaY-jV-9yp" secondAttribute="bottom" constant="20" id="ehr-4U-HBd"/>
+                            <constraint firstItem="aqD-Iq-aCJ" firstAttribute="leading" secondItem="8aB-N1-d6v" secondAttribute="trailing" constant="20" id="u9J-tp-Mhz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aqD-Iq-aCJ" secondAttribute="trailing" constant="20" id="wfc-Qb-oXk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Draw" id="GOy-vH-MW6"/>
+                    <connections>
+                        <outlet property="signatureView" destination="qaY-jV-9yp" id="1We-3K-7Ej"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="923.1884057971015" y="90.401785714285708"/>
+        </scene>
+        <!--Show-->
+        <scene sceneID="YGd-8K-Fhj">
+            <objects>
+                <viewController storyboardIdentifier="ShowSignatureViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Nem-Oz-jHi" customClass="ShowSignatureViewController" customModule="SignatureViewApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bSO-NO-ta9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rX9-xJ-WyL">
+                                <rect key="frame" x="20" y="348" width="374" height="200"/>
+                                <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Qzo-Wa-7ud"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x4O-yC-hWO">
+                                <rect key="frame" x="20" y="128" width="374" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="CMe-7i-jIQ"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Pp8-yI-LrH"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rX9-xJ-WyL" firstAttribute="leading" secondItem="Pp8-yI-LrH" secondAttribute="leading" constant="20" id="F4a-LB-Wuk"/>
+                            <constraint firstItem="x4O-yC-hWO" firstAttribute="leading" secondItem="Pp8-yI-LrH" secondAttribute="leading" constant="20" id="Kc6-CN-Nip"/>
+                            <constraint firstItem="Pp8-yI-LrH" firstAttribute="trailing" secondItem="rX9-xJ-WyL" secondAttribute="trailing" constant="20" id="SkA-PY-hYO"/>
+                            <constraint firstItem="Pp8-yI-LrH" firstAttribute="trailing" secondItem="x4O-yC-hWO" secondAttribute="trailing" constant="20" id="e3j-My-7kM"/>
+                            <constraint firstItem="x4O-yC-hWO" firstAttribute="top" secondItem="Pp8-yI-LrH" secondAttribute="top" constant="40" id="qcL-gf-Ald"/>
+                            <constraint firstItem="rX9-xJ-WyL" firstAttribute="top" secondItem="x4O-yC-hWO" secondAttribute="bottom" constant="20" id="xGa-Wa-IIb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Show" id="KwT-jg-AGS"/>
+                    <connections>
+                        <outlet property="showSignatureView" destination="rX9-xJ-WyL" id="8Bj-na-aJY"/>
+                        <outlet property="signatureImageView" destination="x4O-yC-hWO" id="fzV-6D-ehL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hIa-3c-f3h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1623.1884057971015" y="89.732142857142847"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ToF-sZ-AqR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GVQ-Qk-l6t" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cRZ-MT-bL6">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="g42-xH-3bE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yUV-Xh-Rbk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="228" y="90"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
